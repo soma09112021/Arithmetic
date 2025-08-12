@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>たのしい さんすうゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="startScreen" class="screen active">
+            <h1>たのしい さんすうゲーム</h1>
+            <div class="age-selection">
+                <h2>なんさい？</h2>
+                <div class="age-buttons">
+                    <button class="age-btn" data-age="3">3さい</button>
+                    <button class="age-btn" data-age="4">4さい</button>
+                    <button class="age-btn" data-age="5">5さい</button>
+                    <button class="age-btn" data-age="6">6さい</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="themeScreen" class="screen">
+            <h1>テーマをえらぼう！</h1>
+            <div class="theme-selection">
+                <button class="theme-btn" data-theme="animals">
+                    <span class="theme-icon">🦁</span>
+                    <span>どうぶつ</span>
+                </button>
+                <button class="theme-btn" data-theme="vehicles">
+                    <span class="theme-icon">🚗</span>
+                    <span>のりもの</span>
+                </button>
+                <button class="theme-btn" data-theme="fruits">
+                    <span class="theme-icon">🍎</span>
+                    <span>くだもの</span>
+                </button>
+                <button class="theme-btn" data-theme="sweets">
+                    <span class="theme-icon">🍰</span>
+                    <span>おかし</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="screen">
+            <div class="header">
+                <div class="level-info">
+                    <span class="level">レベル <span id="currentLevel">1</span></span>
+                    <div class="exp-bar">
+                        <div class="exp-progress"></div>
+                    </div>
+                </div>
+                <div class="coin-info">
+                    <span class="coin-icon">🪙</span>
+                    <span id="coinCount">0</span>
+                </div>
+            </div>
+
+            <div class="question-area">
+                <div id="questionDisplay"></div>
+                <div class="operator-display" id="operatorDisplay"></div>
+            </div>
+
+            <div class="answer-area">
+                <div class="answer-buttons" id="answerButtons"></div>
+            </div>
+
+            <div id="feedback" class="feedback hidden"></div>
+        </div>
+
+        <div id="resultScreen" class="screen">
+            <div class="result-content">
+                <h1>よくできました！</h1>
+                <div class="stars">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                </div>
+                <div class="result-stats">
+                    <p>せいかい: <span id="correctCount">0</span></p>
+                    <p>コイン: +<span id="earnedCoins">0</span></p>
+                </div>
+                <button id="playAgainBtn" class="play-again-btn">もういちど</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="correctSound" preload="auto">
+        <source src="sounds/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrongSound" preload="auto">
+        <source src="sounds/wrong.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clickSound" preload="auto">
+        <source src="sounds/click.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="game.js"></script>
+</body>
+</html>

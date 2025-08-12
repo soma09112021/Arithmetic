@@ -1,0 +1,10 @@
+{
+  "name": "kids-math-game",
+  "version": "1.0.0",
+  "description": "幼児向け足し算・引き算ゲーム",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  },
+  "author": "",
+  "license": "MIT"
+}
