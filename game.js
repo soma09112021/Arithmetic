@@ -39,6 +39,23 @@ class MathGame {
             this.playClickSound();
             this.resetGame();
         });
+
+        document.getElementById('backToStartBtn').addEventListener('click', () => {
+            this.playClickSound();
+            this.showScreen('startScreen');
+        });
+
+        document.getElementById('backFromTheme').addEventListener('click', () => {
+            this.playClickSound();
+            this.showScreen('startScreen');
+        });
+
+        document.getElementById('backFromGame').addEventListener('click', () => {
+            this.playClickSound();
+            if (confirm('ゲームをやめますか？')) {
+                this.showScreen('startScreen');
+            }
+        });
     }
 
     selectAge(age) {
@@ -159,7 +176,7 @@ class MathGame {
         const questionMark = document.createElement('span');
         questionMark.className = 'question-mark';
         questionMark.textContent = '？';
-        questionMark.style.fontSize = '3em';
+        questionMark.style.fontSize = '2em';
         
         questionDisplay.appendChild(group1);
         questionDisplay.appendChild(operator);
